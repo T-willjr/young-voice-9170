@@ -4,5 +4,9 @@ class Professor <ApplicationRecord
   validates_presence_of :specialty
 
   has_many :professor_students
-  has_many :students, through: :professor_students 
+  has_many :students, through: :professor_students
+
+  def self.alphabetical_order
+    order(name: :asc)
+  end
 end
